@@ -67,6 +67,8 @@ public class StringTest {
 //                .hasMessageContaining("index:2, Size: 2")
         ;
 
+//        assertThat
+
 //        assertThatIOException().isThrownBy(() -> {
 //            input.charAt(-1);
 //        });
