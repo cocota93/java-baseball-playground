@@ -47,21 +47,13 @@ public class Calculator {
         return false;
     }
 
-    public void freeCal(String input) {
-
-    }
-
-    @Test
-    public void testSplit() throws Exception{
-        //given
-        String input = "2 + 3 * 4 / 2";
-        String[] split = input.split("");
+    public int freeCal(String input) {
+        String[] split = input.split(" ");
 
         //when
 
-        Stack<String> stack = new Stack();
+        Stack<String> stack = new Stack<>();
         for (String s : split) {
-            if(StringUtils.isBlank(s)) continue;
 
             if(isOperator(s)){
                 stack.push(s);
@@ -83,13 +75,17 @@ public class Calculator {
                 case "/" : tempResult = div(first, s); break;
             }
 
-//            result += tempResult;
             stack.push(String.valueOf(tempResult));
         }
 
         int result = Integer.parseInt(stack.pop()) ;
-        assertThat(result).isEqualTo(10);
+        return result;
 
-        //then
+    }
+
+    @Test
+    public void testFreeString() throws Exception{
+        String input = "2 + 3 * 4 / 2";
+        assertThat(freeCal(input)).isEqualTo(10);
     }
 }
