@@ -42,7 +42,7 @@ public class SetTest {
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
-    @DisplayName("중복되는 코드 없이 값이 존재하는지 확인")
+    @DisplayName("중복되는 코드 없이(파라미터가 중복되지 않아야 한다는 의미가 아님. 코드) 값이 존재하는지 확인")
     public void eraseDuplicateCode(int input) throws Exception{
         //given
 
