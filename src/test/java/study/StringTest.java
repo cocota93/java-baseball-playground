@@ -1,9 +1,10 @@
 package study;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.*;
 
 public class StringTest {
 
@@ -14,7 +15,7 @@ public class StringTest {
     }
 
     @Test
-    public void separator() throws Exception{
+    public void separator() throws Exception {
         //given
         String input = "1,2";
         //when
@@ -27,7 +28,7 @@ public class StringTest {
     }
 
     @Test
-    public void separatorAlways() throws Exception{
+    public void separatorAlways() throws Exception {
         //given
         String input = "1";
         //when
@@ -38,18 +39,18 @@ public class StringTest {
     }
 
     @Test
-    public void asd() throws Exception{
+    public void asd() throws Exception {
         //given
         String input = "(1,2)";
         //when
         String substring = input.substring(1, input.length() - 1);
 
         //then
-        Assertions.assertEquals("1,2",substring);
+        Assertions.assertEquals("1,2", substring);
     }
 
     @Test
-    public void asd2() throws Exception{
+    public void asd2() throws Exception {
         //given
         String input = "ab";
 
